@@ -1,0 +1,30 @@
+.search-bar input{
+    outline: none;
+    border: 1px solid #412728;
+    padding: 8px;
+    border-radius: 20px;
+    width: 250px;
+    /* box-shadow: 1px #ff7c5be7; */
+}
+.extra-icon{
+    font-size: 24px;
+    color: #412728;
+}
+.menu-item{
+    text-decoration: none;
+    color: #ff7c5b;
+    padding: 6px 10px;
+    margin: 10px;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+.menu-item:hover{
+    color: #fff;
+}
+.navBar{
+    box-shadow: 5px 5px 15px #ff7c5be7;
+}
+.navBg{
+    background-color: #0d0e12;
+}
