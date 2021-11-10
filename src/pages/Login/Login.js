@@ -32,8 +32,9 @@ const Login = () => {
                     <input onChange={handleOnChange} name="email" type="text" placeholder="email" /> <br />
                     <input onChange={handleOnChange} name="password" type="text" placeholder="password" /> <br />
                     <button type="btn">login</button> <br />
-                    <button onClick={handleGoogleSignIn}>Google SignIn </button>
                 </Form>
+                <button onClick={handleGoogleSignIn}>Google SignIn </button>
+
                 <p>Dont have account? <Link to="/register" className="btn banner-btn">Register</Link> here </p>
                 {user?.email && <Alert severity="success">Login successfully!</Alert>}
                 {authError && <Alert severity="error">{authError}</Alert>}

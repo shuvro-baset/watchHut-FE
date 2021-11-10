@@ -13,7 +13,7 @@ import Review from './Review/Review';
 
 
 const Dashboard = () => {
-    const {user, logout} = useAuth()
+    const {user, logout, admin} = useAuth()
     let { path, url } = useRouteMatch();
     return (
         <Container fluid>
@@ -27,9 +27,10 @@ const Dashboard = () => {
                     <Nav className="d-flex flex-column">
                         <Link to={`${url}`}>dashboard</Link>
 
-                        <Link to={`${url}/makeAdmin`}>Make Admin</Link>
-                        <Link to={`${url}/addWatch`}>Add Watch</Link>
-                        <Link to={`${url}/manageWatch`}>Manage Watch</Link>
+                    { admin && <Link to={`${url}/makeAdmin`}>Make Admin</Link>}
+                        
+                    { admin && <Link to={`${url}/addWatch`}>Add Watch</Link>}
+                    { admin && <Link to={`${url}/manageWatch`}>Manage Watch</Link>}
                         <Link to={`${url}/pay`}>Pay</Link> <br />
                         <Link to={`${url}/myOrder`}>My Orders</Link> <br />
                         <Link to={`${url}/review`}>Review</Link> <br />
