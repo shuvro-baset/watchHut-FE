@@ -1,10 +1,20 @@
 import React from 'react';
 import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import MyOrders from '../MyOrders/MyOrders';
+import AddWatch from './AddWatch/AddWatch';
+import DashboardHome from './DashboardHome/DashboardHome';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageWatch from './ManageWatch/ManageWatch';
+import Pay from './Pay/Pay';
+import Review from './Review/Review';
+
+
 
 const Dashboard = () => {
     const {user, logout} = useAuth()
+    let { path, url } = useRouteMatch();
     return (
         <Container fluid>
             <Row>
@@ -15,12 +25,14 @@ const Dashboard = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex flex-column">
-                        <Link className="" to="/home">Add Watch</Link> <br />
-                        <Link className="" to="/home">Make Admin </Link> <br />
-                        <Link className="" to="/home">Manage Watch</Link> <br />
-                        <Link className="" to="/home">Pay</Link> <br />
-                        <Link className="" to="/home">My Orders</Link> <br />
-                        <Link className="" to="/home">Review</Link> <br />
+                        <Link to={`${url}`}>dashboard</Link>
+
+                        <Link to={`${url}/makeAdmin`}>Make Admin</Link>
+                        <Link to={`${url}/addWatch`}>Add Watch</Link>
+                        <Link to={`${url}/manageWatch`}>Manage Watch</Link>
+                        <Link to={`${url}/pay`}>Pay</Link> <br />
+                        <Link to={`${url}/myOrder`}>My Orders</Link> <br />
+                        <Link to={`${url}/review`}>Review</Link> <br />
                         <Link onClick={logout} to="/home" className="">Logout</Link>
                     </Nav>
 
@@ -32,7 +44,35 @@ const Dashboard = () => {
 
                 {/* dashboard content */}
                 <Col md={8}>
-                    <h3>dashboard content</h3>
+                    <h3>dashboard</h3>
+                    <Switch>
+                        <Route exact path={path}>
+                            <DashboardHome></DashboardHome>
+                        </Route>
+                        <Route path={`${path}/makeAdmin`}>
+                            <MakeAdmin></MakeAdmin>
+                        </Route>
+                        <Route path={`${path}/addWatch`}>
+                            <AddWatch></AddWatch>
+                        </Route>
+                        
+                        <Route path={`${path}/manageWatch`}>
+                            <ManageWatch></ManageWatch>
+                        </Route>
+                        
+                        <Route path={`${path}/pay`}>
+                            <Pay></Pay>
+                        </Route>
+                        
+                        <Route path={`${path}/myOrder`}>
+                            <MyOrders></MyOrders>
+                        </Route>
+                        
+                        <Route path={`${path}/review`}>
+                            <Review></Review>
+                        </Route>
+                        
+                    </Switch>
                 </Col>
             </Row>
         </Container>
