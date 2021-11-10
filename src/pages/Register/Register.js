@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Form, Row } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({});
     const history = useHistory();
-    // const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
