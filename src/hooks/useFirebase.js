@@ -21,7 +21,7 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
-                // setAuthError('');
+                setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
@@ -35,7 +35,7 @@ const useFirebase = () => {
                 history.replace('/');
             })
             .catch((error) => {
-                // setAuthError(error.message);
+                setAuthError(error.message);
                 console.log(error);
             })
             .finally(() => setIsLoading(false));
@@ -74,10 +74,10 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                getIdToken(user)
-                    .then(idToken => {
-                        // setToken(idToken);
-                    })
+                // getIdToken(user)
+                //     .then(idToken => {
+                //         // setToken(idToken);
+                //     })
             } else {
                 setUser({})
             }
