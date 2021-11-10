@@ -52,7 +52,7 @@ const NavBar = () => {
                         <NavLink className="menu-item" to="/login"> <i className="fas fa-sign-in-alt"></i> Login</NavLink>
                     }
                     { user?.email &&
-                        <small className="menu-item"> Dashboard </small>
+                        <NavLink className="menu-item" to="/dashboard">  Dashboard</NavLink>
                     }
                     { user?.email &&
                         <small className="menu-item"><i className="fas fa-user"></i> {user.displayName || user.name} </small>
