@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import MyOrders from '../MyOrders/MyOrders';
 import AddWatch from './AddWatch/AddWatch';
 import DashboardHome from './DashboardHome/DashboardHome';
@@ -50,16 +51,16 @@ const Dashboard = () => {
                         <Route exact path={path}>
                             <DashboardHome></DashboardHome>
                         </Route>
-                        <Route path={`${path}/makeAdmin`}>
+                        <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
-                        <Route path={`${path}/addWatch`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addWatch`}>
                             <AddWatch></AddWatch>
-                        </Route>
+                        </AdminRoute>
                         
-                        <Route path={`${path}/manageWatch`}>
+                        <AdminRoute path={`${path}/manageWatch`}>
                             <ManageWatch></ManageWatch>
-                        </Route>
+                        </AdminRoute>
                         
                         <Route path={`${path}/pay`}>
                             <Pay></Pay>
