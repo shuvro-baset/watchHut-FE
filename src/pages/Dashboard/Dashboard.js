@@ -14,7 +14,7 @@ import Review from './Review/Review';
 
 
 const Dashboard = () => {
-    const {user, logout, admin} = useAuth()
+    const {user, logout, admin, isLoading} = useAuth()
     let { path, url } = useRouteMatch();
     return (
         <Container fluid>

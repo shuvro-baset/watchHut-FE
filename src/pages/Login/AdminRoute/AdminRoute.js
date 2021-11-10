@@ -3,8 +3,10 @@ import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
+
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, admin,  isLoading } = useAuth();
+    const {user, admin, isLoading} = useAuth()
+    console.log(user, admin, "laksdjfljsadf");
 
     if (isLoading) { return <h2>is loading ........</h2> }
     return (
