@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Form, Row } from 'react-bootstrap';
+import { Alert, Container, Form, Row } from 'react-bootstrap';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+    const { user, loginUser, signInWithGoogle, authError } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
@@ -35,6 +35,8 @@ const Login = () => {
                     <button onClick={handleGoogleSignIn}>Google SignIn </button>
                 </Form>
                 <p>Dont have account? <Link to="/register" className="btn banner-btn">Register</Link> here </p>
+                {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                {authError && <Alert severity="error">{authError}</Alert>}
             </Row>
         </Container>
     );

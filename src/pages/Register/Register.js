@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Row } from 'react-bootstrap';
+import { Alert, Container, Form, Row } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
@@ -16,18 +16,26 @@ const Register = () => {
         setRegisterData(newRegisterData);
     }
 
+    const handleRegister = e => {
+        
+        registerUser(registerData.email, registerData.password, registerData.name, history);
+        e.preventDefault();
+    }
+
     return (
         <Container>
             <Row className="my-5 text-center">
                 <h2 className="my-5">Register</h2>
-                <Form>
+                <Form onSubmit={handleRegister}>
                     <input onBlur={handleOnBlur} name="name" type="text" placeholder="name" /> <br />
                     <input onBlur={handleOnBlur} name="email" type="text" placeholder="email" /> <br />
                     <input onBlur={handleOnBlur} name="password" type="text" placeholder="password" /> <br />
                     <button type="submit">Register</button>
                 </Form>
                 <p>already have account? <Link to="/login" className="btn banner-btn">login</Link> here </p>
-
+                
+                {user?.email && <Alert severity="success">User Created successfully!</Alert>}
+                {authError && <Alert severity="error">{authError}</Alert>}
             </Row>
         </Container>
     );
