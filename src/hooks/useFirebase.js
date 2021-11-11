@@ -2,6 +2,7 @@ import initializeAuthentication from '../pages/Login/firebase/firebase.initializ
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, 
     signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
+import axios from 'axios';
 
 
 // initialize firebase app
@@ -86,15 +87,20 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [])
 
-    // get admin user
+    // // get admin user
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/users/${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAdmin(data.admin)
+    //             // setIsLoading(false);
+    //             })
+    // }, [user.email])
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setAdmin(data.admin)
-                // setIsLoading(false);
-                })
-    }, [user.email])
+        axios.get(`http://localhost:5000/users/${user?.email}`).then((res) => {
+          setAdmin(res.data.admin);
+        });
+      }, [user?.email]);
     
     const logout = () => {
         setIsLoading(true);
