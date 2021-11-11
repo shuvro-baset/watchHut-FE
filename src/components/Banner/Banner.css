@@ -1,0 +1,20 @@
+.banner-div{
+    background-image: linear-gradient(rgba(0, 41, 75, 0.51), rgba(0, 41, 75, 0.51)), 
+                        url('https://images.unsplash.com/photo-1632794716789-42d9995fb5b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    color: #fff;
+}
+.brand-name{
+    color: #e12454;
+    font-size: 40px;
+}
+.btn-order{
+    background-color: #e12454;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

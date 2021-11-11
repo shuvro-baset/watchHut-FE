@@ -53,7 +53,7 @@ const AddWatch = () => {
             </Col>
 
             <Col md={6} className="d-flex justify-content-center align-items-center">
-                <img className="img-fluid rounded my-5"src="https://images.pexels.com/photos/7235804/pexels-photo-7235804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+                <img className="img-fluid rounded my-5"src="https://images.unsplash.com/photo-1598516801967-0ce306d00780?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" />
             </Col>
         </Row>
     </Container>

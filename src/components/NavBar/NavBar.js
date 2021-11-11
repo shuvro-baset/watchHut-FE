@@ -4,28 +4,10 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './NavBar.css'
 const NavBar = () => {
-    const { user, isLoading, authError, logout } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
-
         <>
-            <Container>
-            <Row className="d-flex justify-content-between align-items-center">
-                    <Col md={4} className="logo text-center">
-                        <img className="img-fluid" src="#" alt="" />
-                    </Col>
-                    <Col md={4} className="search-bar text-center">
-                        <input type="text"/>
-                    </Col>
-                    <Col md={4} className="extra-icon text-center mb-2">
-                        <i className="fas fa-heart mx-2"></i>
-                        <i className="fas fa-route mx-2"></i>
-                        <i className="fas fa-plane-departure mx-2"></i>
-                        <i className="fas fa-map-marked mx-2"></i>
-                        <i className="far fa-question-circle mx-2"></i>
-                    </Col>
-            </Row>
-        </Container>
 
         {/* menu part */}
         <Navbar sticky="top" className="navBar navBg" expand="lg">

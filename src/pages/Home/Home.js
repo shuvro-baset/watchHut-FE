@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SmartWatch from '../../components/SmartWatch/SmartWatch';
 import { Container, Row } from 'react-bootstrap';
 import Reviews from '../../components/Reviews/Reviews';
+import Banner from '../../components/Banner/Banner';
 
 const Home = () => {
     // set state for all watches
@@ -26,12 +27,12 @@ const Home = () => {
 
     return (
         <>
-            <h2>This is home </h2>
-
-            <Container>
+            <Banner></Banner>
+            <Container className="my-5">
+                <h2>Smart Watch</h2>
                 <Row>
                     {
-                    watches.map(watch => 
+                    watches.slice(2,8).map(watch => 
                             <SmartWatch
                                 key={watch.key}
                                 watch={watch}
