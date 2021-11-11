@@ -8,18 +8,25 @@ const SmartWatch = (props) => {
     const {_id, title, description, image, price} = props.watch;
     return (
         <>
-            <Col md={6} className="my-3">
-                <div className="d-flex">
-                    <div className="w-50 first-div">
-                        <img className='img-fluid rounded' src={image} alt="" />
+            <Col md={4} className="my-3">
+                    <div className="first-div">
+                        <img className='img-fluid rounded w-100' src={image} alt="" />
                     </div>
-                    <div className="w-50 ms-3">
+                    <div className="my-3 second-div">
                         <h4>{title}</h4>
                         <p>{description.slice(0,80)}</p>
-                        <p>Price: {price}</p>
-                        <Link to={`/watch/${_id}`}><button className="btn btn-booking">Order Now</button></Link>
+                        <h6>Price: {price} <i className="fas fa-dollar-sign"></i></h6>
+
+                        <div className="d-flex justify-content-between align-items-center my-3">
+                            <Link to={`/watch/${_id}`}><button className="btn btn-order">Order Now <i className="fas fa-cart-plus"></i></button></Link>
+                            <div>
+                                <i className="icon-pr mx-2 fas fa-heart"></i>
+                                <i className="icon-pr mx-2 fas fa-comments"></i>
+                                <i className="icon-pr mx-2 fas fa-thumbs-up"></i>
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
             </Col>
         </>
     );
