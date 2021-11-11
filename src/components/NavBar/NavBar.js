@@ -34,16 +34,9 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
                     <Link className="menu-item" to="/home">Home</Link>
-
-                    {/* {user.email && 
-                        <Link className="menu-item" to="/my-tours">My Tours</Link> 
-                    }
-                    { user?.email && 
-                    <Link className="menu-item" to="/manage-all-tours">Manage Tours</Link> 
-                    }
-                    { user?.email &&
-                    <Link className="menu-item" to="/add-tours">Add Tours</Link>} */}
                     <Link className="menu-item" to="/about">About</Link>
+                    <Link className="menu-item" to="/watches">WatchHut</Link>
+
                 </Nav>
 
                 <Nav className="mr-auto">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row, Spinner } from 'react-bootstrap';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
@@ -15,7 +15,12 @@ import Review from './Review/Review';
 
 const Dashboard = () => {
     const {user, logout, admin, isLoading} = useAuth()
+    
     let { path, url } = useRouteMatch();
+    if (isLoading) {
+        // showing spinner when reload page.
+        return <Col className="d-flex justify-content-center align-items-center my-3" ><Spinner animation="border" variant="primary" /></Col>
+    }
     return (
         <Container fluid>
             <Row>

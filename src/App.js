@@ -8,6 +8,8 @@ import Register from './pages/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
+import WatchHut from './pages/WatchHut/WatchHut';
+import WatchOrder from './pages/WatchOrder/WatchOrder';
 function App() {
   return (
     <>
@@ -20,8 +22,15 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          
+          <Route path="/watches">
+            <WatchHut></WatchHut>
+          </Route>
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/watch/:watchId">
+            <WatchOrder></WatchOrder>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

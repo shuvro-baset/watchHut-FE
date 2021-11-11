@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Spinner } from 'react-bootstrap';
 import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -6,7 +7,10 @@ import useAuth from '../../../hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
 
-    if (isLoading) { return <h2>is loading ........</h2> }
+    if (isLoading) {
+        // showing spinner when reload page.
+        return <Col className="d-flex justify-content-center align-items-center my-3" ><Spinner animation="border" variant="primary" /></Col>
+    }
     return (
         <Route
             {...rest}
