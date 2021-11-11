@@ -6,6 +6,7 @@ import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import AddWatch from './AddWatch/AddWatch';
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageOrders from './ManageOrders/ManageOrders';
 import ManageWatch from './ManageWatch/ManageWatch';
 import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
@@ -37,6 +38,8 @@ const Dashboard = () => {
                         
                     { admin && <Link to={`${url}/addWatch`}>Add Watch</Link>}
                     { admin && <Link to={`${url}/manageWatch`}>Manage Watch</Link>}
+                    { admin && <Link to={`${url}/manageOrders`}>Manage Orders</Link>}
+
                         <Link to={`${url}/pay`}>Pay</Link> <br />
                         <Link to={`${url}/myOrder`}>My Orders</Link> <br />
                         <Link to={`${url}/review`}>Review</Link> <br />
@@ -65,6 +68,9 @@ const Dashboard = () => {
                         
                         <AdminRoute path={`${path}/manageWatch`}>
                             <ManageWatch></ManageWatch>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageOrders`}>
+                            <ManageOrders></ManageOrders>
                         </AdminRoute>
                         
                         <Route path={`${path}/pay`}>
