@@ -3,13 +3,12 @@ import React from 'react';
 const Reviews = (props) => {
     const {name, review, rating} = props.review;
     const count = +rating;
-    
+
     return (
         <div>
             <h2>{name}</h2>
             <h2>{review}</h2>
             <h2> </h2>
-
             { count === 1 && <i className="fas fa-star"></i>
                 
             }
