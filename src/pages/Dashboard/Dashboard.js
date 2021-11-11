@@ -3,11 +3,11 @@ import { Col, Container, Nav, Navbar, Row, Spinner } from 'react-bootstrap';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
-import MyOrders from '../MyOrders/MyOrders';
 import AddWatch from './AddWatch/AddWatch';
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManageWatch from './ManageWatch/ManageWatch';
+import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Review from './Review/Review';
 

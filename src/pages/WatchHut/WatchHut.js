@@ -15,7 +15,6 @@ const WatchHut = () => {
     }, [])
     return (
         <Container>
-            <NavBar></NavBar>
             <Row className="my-5">
                 {
                     watches.map(watch => 

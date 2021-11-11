@@ -17,7 +17,7 @@ const WatchOrder = () => {
      const location = useLocation();
      const history = useHistory();
      // set redirect url
-     const redirect_uri = location.state?.from || '/my-order';
+     const redirect_uri = location.state?.from || '/dashboard/myOrder';
 
      // form data
     const { register, handleSubmit, formState: { errors }, reset } = useForm();

@@ -3,6 +3,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import SmartWatch from '../../components/SmartWatch/SmartWatch';
+import { Container, Row } from 'react-bootstrap';
 
 const Home = () => {
     // set state for all watches
@@ -16,17 +17,22 @@ const Home = () => {
     }, [])
     return (
         <>
-            <NavBar></NavBar>
             <h2>This is home </h2>
 
-            {
-                watches.map(watch => 
-                        <SmartWatch
-                            key={watch.key}
-                            watch={watch}
-                        ></SmartWatch>
-                )
-            }
+            <Container>
+                <Row>
+                    {
+                    watches.map(watch => 
+                            <SmartWatch
+                                key={watch.key}
+                                watch={watch}
+                            ></SmartWatch>
+                    )
+                }
+                </Row>
+            </Container>
+
+            
         </>
     );
 };

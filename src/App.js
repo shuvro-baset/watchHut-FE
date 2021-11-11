@@ -10,11 +10,13 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
 import WatchHut from './pages/WatchHut/WatchHut';
 import WatchOrder from './pages/WatchOrder/WatchOrder';
+import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <>
       <AuthProvider>
       <Router>
+      <NavBar></NavBar>
         <Switch>
           <Route exact path="/">
             <Home></Home>
