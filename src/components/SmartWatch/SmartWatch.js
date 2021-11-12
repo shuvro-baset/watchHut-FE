@@ -15,7 +15,7 @@ const SmartWatch = (props) => {
                     <div className="my-3 second-div">
                         <h4>{title}</h4>
                         <p>{description.slice(0,80)}</p>
-                        <h6>Price: {price} <i className="fas fa-dollar-sign"></i></h6>
+                        <h6>Price: <i className="fas fa-dollar-sign"></i> {price} </h6>
 
                         <div className="d-flex justify-content-between align-items-center my-3">
                             <Link to={`/watch/${_id}`}><button className="btn btn-order">Order Now <i className="fas fa-cart-plus"></i></button></Link>

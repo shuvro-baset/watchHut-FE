@@ -33,26 +33,30 @@ const ManageWatch = () => {
 
     return (
         <Container>
-            <h3>Manage all watchers from here.</h3>
+            <div className="mt-3 mb-5">
+                    <h2 className="div-head">Manage Watches </h2>
+                    <div className="underline"></div>
+            </div>
 
             {
                 watches.map(watch => 
                     <Row className="my-5 manage-watch"
                         key={watch._id}>
-                        <Col md={3} className="text-center">
-                            <img className="img-fluid rounded" src={watch.image} alt="" />
+                        <Col md={4} className="text-center">
+                            <img className="img-fluid rounded w-100" src={watch.image} alt="" />
                         </Col>
-                        <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
+                        <Col md={4} className="text-center d-flex flex-column justify-content-center align-items-center">
                             <h4>{watch.title}</h4>
                         </Col>
-                        <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
+                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
                             <p><i className="fas fa-dollar-sign"></i> {watch.price}</p>
                         </Col>
-                        <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
+                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
                             <button className="btn btn-danger" onClick={() => handleDeleteWatch(watch._id)}>delete</button>
                         </Col>
                     </Row>
                 )
+                
             }
         </Container>
     );

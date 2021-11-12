@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useHistory, useLocation, useParams } from 'react-router';
+import NavBar from '../../components/NavBar/NavBar';
 import useAuth from '../../hooks/useAuth';
 
 const WatchOrder = () => {
@@ -50,48 +51,57 @@ const WatchOrder = () => {
 
 
     return (
-        <Container>
+        <>
+        <NavBar></NavBar>
+            <Container>
             <Row className="my-5">
                 <Col md={6}>
-                    <h1 className="text-center my-3 info-head">Watch Information</h1>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Watch Information </h2>
+                    <div className="underline"></div>
+                </div>
                     <img className="img-fluid rounded" src={watch.image} alt="" />
                     <h3 className="my-3">{watch.title}</h3>
                     <p>{watch.description}</p>
-                    <p>Price: &#2547;{watch.price}</p>
+                    <p>Price: <i className="fas fa-dollar-sign"></i> {watch.price}</p>
                 </Col>
                 <Col md={6}>
-                    <h1 className="text-center my-3 info-head">watch Order Information</h1>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Order Information </h2>
+                    <div className="underline"></div>
+                </div>
                     
                     <div className="ms-5">
-                        <h4 className="mb-3 order-head">User Information</h4>
+                        <h4 className="mb-3 order-head">User's Information</h4>
                         <hr />
                         <p>User Name: {user.displayName}</p>
                         <p>User Email: {user.email}</p>
 
                     </div>
                     <div className="ms-5">
-                        <form onSubmit={handleSubmit(onSubmit)} className="form-info">
+                        <form onSubmit={handleSubmit(onSubmit)} className="login-div">
                             <h4 className="mb-3 order-head">Billing Information</h4>   
                                 <hr />                     
                                 <label>Address</label> <br />
-                                <input  {...register("address", { required: true })}/> <br />
+                                <input  className="w-100" {...register("address", { required: true })}/> <br />
                                 {errors.address && <span>This field is required</span>}
 
                                 <label>Phone Number</label> <br />
-                                <input type="number" {...register("mobile", { required: true, minLength:6, maxLength:11})}/> <br />
+                                <input className="w-100" type="number" {...register("mobile", { required: true, minLength:6, maxLength:11})}/> <br />
                                 {errors.mobile && <span>This field is required</span>}
 
 
                                 <label>Message</label> <br />
-                                <textarea {...register("message")} rows="3" /> <br />
+                                <textarea className="w-100" {...register("message")} rows="3" /> <br />
                                 {errors.message && <span>This field is required</span>}
 
-                                <button type="submit" className="btn btn-booking">Confirm Order</button>
+                                <button type="submit" className="btn btn-order">Confirm Order</button>
                         </form>
                     </div>
                 </Col>
             </Row>
         </Container>
+        </>
     );
 };
 
