@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Table } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import './ManageOrders.css'
+
 
 const ManageOrders = () => {
     // user data from useAuth
@@ -65,34 +67,68 @@ const ManageOrders = () => {
         <Container className="my-5">
 
             <Row>
-                <h2>Welcome to SP WatchHut, <span className="username">{user.displayName}</span> </h2>
+                <h2>Manage All Orders. </h2>
 
             </Row>
-            
+            <Row className="my-5 my-order">
+            <Table responsive>
+                <thead>
+                    <tr className="manage-order-head text-white rounded">
+                        <th>Thumbnail</th>
+                        <th>UserName</th>
+                        <th>Mobile</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                    <tbody>
+
+                    
+                    {orders.map(order => 
+                        <tr
+                            key={order._id}>
+                            <td><img className="img-fluid rounded w-100" src={order.watch.image} alt="" /></td>
+                            <td>{order.userName}</td>
+                            <td>{order.mobile}</td>
+                            <td>{order.watch.title}</td>
+                            <td><i className="fas fa-dollar-sign"></i> {order.watch.price} </td>
+                            <td><button className="btn btn-watch" onClick={() => handleStatus(order._id)}>{order.status === "Shipped" ? "Shipped" : order.status}</button></td>
+                            <td><button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button></td>
+
+                        </tr>                    
+                    )
+                    
+                    }
+                    </tbody>
+                    
+                </Table> 
+            </Row>
             {/* showing order data */}
             
-            {
+            {/* {
                 orders.map(order => 
-                    <Row className="my-5"
+                    <Row className="my-5 my-order"
                         key={order._id}>
-                        <Col md={2} className="text-center">
+                        <Col md={3} className="text-center">
                             <img className="img-fluid rounded" src={order.watch.image} alt="" />
                         </Col>
-                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <h4>{order.watch.name}</h4>
+                        <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4>{order.watch.title}</h4>
                         </Col>
                         <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <p>{order.watch.price}</p>
+                            <p>{order.watch.price} <i className="fas fa-dollar-sign"></i></p>
                         </Col>
                         <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                        <button className="btn btn-warning" onClick={() => handleStatus(order._id)}>{order.status === "Shipped" ? "Shipped" : order.status}</button>
+                        <button className="btn btn-watch" onClick={() => handleStatus(order._id)}>{order.status === "Shipped" ? "Shipped" : order.status}</button>
                         </Col>
                         <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
                             <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
                         </Col>
                     </Row>
                 )
-            }
+            } */}
         </Container>
     );
 };

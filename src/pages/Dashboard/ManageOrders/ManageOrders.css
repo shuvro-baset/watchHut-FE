@@ -1,0 +1,19 @@
+.btn-watch{
+    background-color: #00294b;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.btn-watch:hover{
+    background-color: #00294b;
+    color: #e12454;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.manage-order-head{
+    background-color: #00294b;
+    color: #fff;
+    padding: 5px 10px;
+}

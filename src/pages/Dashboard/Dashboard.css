@@ -27,3 +27,17 @@
     background-color: #ffffff;
     color: #00294b;
 }
+
+@media (max-width: 426px) {
+    .side-nav{
+        background-color: #e12454;
+        height: 100%;
+    }
+}
+
+@media (max-width: 769px) {
+    .side-nav{
+        background-color: #e12454;
+        height: 100%;
+    }
+}
