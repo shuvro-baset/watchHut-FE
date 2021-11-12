@@ -11,6 +11,9 @@ import WatchHut from './pages/WatchHut/WatchHut';
 import WatchOrder from './pages/WatchOrder/WatchOrder';
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
+
+
 function App() {
   return (
     <>
@@ -40,6 +43,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register></Register>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
