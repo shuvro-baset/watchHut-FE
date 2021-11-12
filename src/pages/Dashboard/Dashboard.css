@@ -1,7 +1,4 @@
-.side-nav{
-    background-color: #e12454;
-    height: 100vh;
-}
+
 .dash-head{
     background-color: #00294b;
     color: #fff;
@@ -21,7 +18,7 @@
     border-radius: 5px;
     color: #ffffff;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .dash-nav:hover{
     background-color: #ffffff;

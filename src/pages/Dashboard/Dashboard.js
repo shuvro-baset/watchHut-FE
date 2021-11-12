@@ -28,10 +28,9 @@ const Dashboard = () => {
                 {/* side navbar */}
                 <Col md={2} className="m-0 p-0">
                     <Navbar className="side-nav" expand="lg">
-                        <Container fluid>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="d-flex flex-column justify-content-center">
+                            <Nav className="mt-5 ms-4 d-flex flex-column">
                                 <Link className="dash-nav" to={`${url}`}>dashboard</Link>
 
                                 { admin && <Link className="dash-nav" to={`${url}/makeAdmin`}>Make Admin</Link>}
@@ -46,13 +45,12 @@ const Dashboard = () => {
                             </Nav>
 
                             </Navbar.Collapse>
-                        </Container>
                     </Navbar>
                 </Col>
 
                 {/* dashboard content */}
                 <Col md={10} className="m-0 p-0">
-                    <div className='p-3 dash-head'>
+                    <div className='dash-head'>
                         <div className='d-flex justify-content-around align-items-center'>
                             <h3>{user.displayName}</h3>
                             <Link to="/home" className="btn icon-pr3"><i className="fas fa-home"></i></Link>

@@ -38,7 +38,7 @@ const Login = () => {
                         <h2 className="my-3">Login</h2>
                         <Form onSubmit={handleLogin}>
                             <input onChange={handleOnChange} name="email" type="text" placeholder="email" /> <br />
-                            <input onChange={handleOnChange} name="password" type="text" placeholder="password" /> <br />
+                            <input onChange={handleOnChange} name="password" type="password" placeholder="password" /> <br />
                             <button className="btn btn-order my-2" type="submit">login</button> <br />
                         </Form>
                         <button className="btn btn-primary"onClick={handleGoogleSignIn}>Google SignIn </button>

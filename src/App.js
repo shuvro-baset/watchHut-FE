@@ -1,4 +1,3 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -27,7 +26,6 @@ function App() {
           <Route path="/about">
             <About></About>
           </Route>
-          
           <Route path="/watches">
             <WatchHut></WatchHut>
           </Route>
@@ -43,7 +41,6 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          
         </Switch>
         <Footer></Footer>
       </Router>

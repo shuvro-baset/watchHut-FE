@@ -34,7 +34,7 @@ const Register = () => {
                         <Form onSubmit={handleRegister}>
                             <input onBlur={handleOnBlur} name="name" type="text" placeholder="name" /> <br />
                             <input onBlur={handleOnBlur} name="email" type="text" placeholder="email" /> <br />
-                            <input onBlur={handleOnBlur} name="password" type="text" placeholder="password" /> <br />
+                            <input onBlur={handleOnBlur} name="password" type="password" placeholder="password" /> <br />
                             <button className="btn btn-order my-2" type="submit">Register</button>
                         </Form>
                         <p>already have account? <Link to="/login">login</Link> </p>

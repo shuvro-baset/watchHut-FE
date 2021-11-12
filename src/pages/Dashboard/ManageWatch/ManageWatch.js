@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import './ManageWatch.css'
 
 const ManageWatch = () => {
     const [watches, setWatches] = useState([])
@@ -36,7 +37,7 @@ const ManageWatch = () => {
 
             {
                 watches.map(watch => 
-                    <Row className="my-5"
+                    <Row className="my-5 manage-watch"
                         key={watch._id}>
                         <Col md={3} className="text-center">
                             <img className="img-fluid rounded" src={watch.image} alt="" />
@@ -45,7 +46,7 @@ const ManageWatch = () => {
                             <h4>{watch.title}</h4>
                         </Col>
                         <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <p>{watch.price}</p>
+                            <p><i className="fas fa-dollar-sign"></i> {watch.price}</p>
                         </Col>
                         <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
                             <button className="btn btn-danger" onClick={() => handleDeleteWatch(watch._id)}>delete</button>

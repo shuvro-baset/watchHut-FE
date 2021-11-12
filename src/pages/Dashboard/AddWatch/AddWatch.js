@@ -26,28 +26,30 @@ const AddWatch = () => {
         <Row>
             <Col md={6}>
 
-                <h1 className="info-head text-center"> Add a New Watch</h1> 
-                <hr />
-                <div>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Add Watch</h2>
+                    <div className="underline"></div>
+                </div>
+                <div className='login-div'>
                     <form onSubmit={handleSubmit(onSubmit)} className="form-info">
                         <label>Watch title</label> <br />
-                        <input {...register("title", { required: true })} /> <br />
+                        <input {...register("title", { required: true })} className="w-100" /> <br />
                         {errors.title && <span>This field is required</span>}
                         
                         
                         <label>Watch Description</label> <br />
-                        <textarea {...register("description")} /> <br />
+                        <textarea rows="4" className="w-100" {...register("description")} /> <br />
                         {errors.description && <span>This field is required</span>}
 
                         <label>Price</label> <br />
-                        <input type="number" {...register("price", { required: true })} /> <br />
+                        <input type="number" className="w-100" {...register("price", { required: true })} /> <br />
                         {errors.price && <span>This field is required</span>}
 
                         
                         <label>Watch Image Url</label> <br />
-                        <input {...register("image", { required: true })} /> <br />
+                        <input {...register("image", { required: true })} className="w-100" /> <br />
                         {errors.image && <span>This field is required</span>} <br />
-                        <button type="submit" className="btn btn-booking">Add a Tour</button>
+                        <button type="submit" className="btn btn-order">Add Watch</button>
                     </form>
                 </div>
             </Col>
