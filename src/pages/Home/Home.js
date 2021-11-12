@@ -11,9 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import 'swiper/swiper-bundle.min.css';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import Features from '../../components/Features/Features';
-import Rating from 'react-rating';
 import NavBar from '../../components/NavBar/NavBar';
-
+import './Home.css'
 
 const Home = () => {
     // set state for all watches
@@ -40,7 +39,10 @@ const Home = () => {
             <Banner></Banner>
             <Container>
                 <Row className="my-5">
-                <h2>New Collections... </h2>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">New Collections... </h2>
+                    <div className="underline"></div>
+                </div>
                     <Col md={3}>
                         <img style={{'height': '150px'}} className="w-100 img-fluid rounded" src="https://cdn.mos.cms.futurecdn.net/oPEdu7DPcBN5jbVR8rLAcS.jpg" alt="" />
                         <h4 className="text-center my-2">Mi band 5</h4>
@@ -60,7 +62,10 @@ const Home = () => {
                 </Row>
             </Container>
             <Container className="my-5">
-                <h2>Smart Watch</h2>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Smart Watch </h2>
+                    <div className="underline"></div>
+                </div>
                 <Row>
                     {
                     watches.slice(2,8).map(watch => 
@@ -76,10 +81,13 @@ const Home = () => {
 
 
             <Row className="my-5">
-                    <h2 className="my-3">Customer Reviews</h2>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Customer Reviews </h2>
+                    <div className="underline"></div>
+                </div>
                     <Swiper
                         spaceBetween={50}
-                        slidesPerView={3}
+                        slidesPerView={2}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                         >

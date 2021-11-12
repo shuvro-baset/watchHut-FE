@@ -1,0 +1,9 @@
+.underline {
+    width: 150px;
+    height: 2px;
+    background: #e12454;
+}
+.div-head{
+    color: #00294b;
+    font-weight: bold;
+}

@@ -39,14 +39,17 @@ const MyOrders = () => {
         <Container className="my-5">
 
             <Row>
-                <h2>My Order List </h2>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">My Orders</h2>
+                    <div className="underline"></div>
+                </div>
             </Row>
             
             {/* showing order data */}
-            <hr />
+            
             {
                 myOrders.map(order => 
-                    <Row className="my-5 my-order"
+                    <Row className="my-5 my-order shadow py-3 rounded"
                         key={order._id}>
                         <Col md={3} className="text-center">
                             <img className="img-fluid rounded" src={order.watch.image} alt="" />

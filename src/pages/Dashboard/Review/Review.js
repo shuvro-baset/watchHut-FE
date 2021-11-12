@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import ReactStars from "react-rating-stars-component";
 import useAuth from '../../../hooks/useAuth';
+import review from '../../../images/review.png'
+
 
 const Review = () => {
     const {user} = useAuth();
@@ -31,31 +34,38 @@ const Review = () => {
         setRating(newRating);
         };
     return (
-        <div>
-            <h3>give a review from here.</h3>
-            
-            <form onSubmit={handleSubmit(onSubmit)} className="form-info">
+        <Container>
+
+            <Row>
+                <div className="mt-3 mb-5">
+                    <h2 className="div-head">Give a Review </h2>
+                    <div className="underline"></div>
+                </div>
+                <Col md={6}>
+                    <div className="shadow py-3 m-5 rounded login-div text-center">
+                    <form onSubmit={handleSubmit(onSubmit)} className="form-info d-flex flex-column justify-content-center align-items-center">
                         <label>Review</label> <br />
                         <textarea rows="4" cols="40" {...register("review", { required: true })} /> <br />
                         {errors.review && <span>This field is required</span>}
-
-                        <label>Ratings</label> <br />
+                        <label>Ratings</label> 
                         <ReactStars
                             count={5}
                             onChange={ratingChanged}
                             size={24}
-                            activeColor="#ffd700"
+                            activeColor="#e12454"
                         />
-                        {errors.rating && <span>This field is required</span>}
-
-                        <button type="submit" className="btn btn-booking">Review</button>
+                        <button type="submit" className="btn btn-order">Review</button>
                     </form>
-                
-                
-                
-                
-
-        </div>
+                    </div>
+                </Col>
+                <Col md={6}>
+                    <img className="img-fluid rounded" src={review} alt="" />
+                </Col>
+            </Row>
+            
+            
+            
+        </Container>
     );
 };
 
