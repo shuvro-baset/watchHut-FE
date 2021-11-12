@@ -14,6 +14,8 @@ const WatchHut = () => {
         .then(data => setWatches(data))
     }, [])
     return (
+        <>
+        <NavBar></NavBar>
         <Container>
             <Row className="my-5">
                 {
@@ -27,6 +29,7 @@ const WatchHut = () => {
             </Row>
             
         </Container>
+        </>
     );
 };
 

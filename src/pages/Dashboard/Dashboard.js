@@ -11,7 +11,7 @@ import ManageWatch from './ManageWatch/ManageWatch';
 import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Review from './Review/Review';
-
+import './Dashboard.css'
 
 
 const Dashboard = () => {
@@ -26,35 +26,38 @@ const Dashboard = () => {
         <Container fluid>
             <Row>
                 {/* side navbar */}
-                <Col md={4} className="mt-5">
-                <Navbar className="" expand="lg">
-                <Container fluid>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="d-flex flex-column">
-                        <Link to={`${url}`}>dashboard</Link>
+                <Col md={2} className="m-0 p-0">
+                    <Navbar className="side-nav" expand="lg">
+                        <Container fluid>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="d-flex flex-column justify-content-center">
+                                <Link className="dash-nav" to={`${url}`}>dashboard</Link>
 
-                    { admin && <Link to={`${url}/makeAdmin`}>Make Admin</Link>}
-                        
-                    { admin && <Link to={`${url}/addWatch`}>Add Watch</Link>}
-                    { admin && <Link to={`${url}/manageWatch`}>Manage Watch</Link>}
-                    { admin && <Link to={`${url}/manageOrders`}>Manage Orders</Link>}
+                                { admin && <Link className="dash-nav" to={`${url}/makeAdmin`}>Make Admin</Link>}
+                                { admin && <Link className="dash-nav" to={`${url}/addWatch`}>Add Watch</Link>}
+                                { admin && <Link className="dash-nav" to={`${url}/manageWatch`}>Manage Watch</Link>}
+                                { admin && <Link className="dash-nav" to={`${url}/manageOrders`}>Manage Orders</Link>}
 
-                        <Link to={`${url}/pay`}>Pay</Link> <br />
-                        <Link to={`${url}/myOrder`}>My Orders</Link> <br />
-                        <Link to={`${url}/review`}>Review</Link> <br />
-                        <Link onClick={logout} to="/home" className="">Logout</Link>
-                    </Nav>
+                                <Link className="dash-nav" to={`${url}/pay`}>Pay</Link> 
+                                <Link className="dash-nav" to={`${url}/myOrder`}>My Orders</Link> 
+                                <Link className="dash-nav" to={`${url}/review`}>Review</Link> 
+                                <Link className="dash-nav" onClick={logout} to="/home">Logout</Link>
+                            </Nav>
 
-                    
-                    </Navbar.Collapse>
-                </Container>
-        </Navbar>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
                 </Col>
 
                 {/* dashboard content */}
-                <Col md={8}>
-                    <h3>dashboard</h3>
+                <Col md={10} className="m-0 p-0">
+                    <div className='p-3 dash-head'>
+                        <div className='d-flex justify-content-around align-items-center'>
+                            <h3>{user.displayName}</h3>
+                            <Link to="/home" className="btn icon-pr3"><i className="fas fa-home"></i></Link>
+                        </div>
+                    </div>
                     <Switch>
                         <Route exact path={path}>
                             <DashboardHome></DashboardHome>

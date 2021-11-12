@@ -1,0 +1,14 @@
+.welcome-div{
+    background-image: linear-gradient(rgba(0, 41, 75, 0.51), rgba(0, 41, 75, 0.51)), 
+    url('https://images.unsplash.com/photo-1626193943671-7d4fb8d0f567?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.welcome-text{
+    color: #e12454;
+    font-size: 40px;
+}

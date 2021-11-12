@@ -1,10 +1,15 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import NavBar from '../../components/NavBar/NavBar';
 import './About.css'
 
 
 const About = () => {
     return (
+
+        <>
+        <NavBar></NavBar>
+
         <Container >
             <Row className="about-div">
                 <div>
@@ -20,6 +25,9 @@ const About = () => {
                 </div>
             </Row>
         </Container>
+        </>
+
+        
     );
 };
 

@@ -3,6 +3,8 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './NavBar.css'
+
+
 const NavBar = () => {
     const { user, logout } = useAuth();
 

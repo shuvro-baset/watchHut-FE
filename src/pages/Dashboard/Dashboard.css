@@ -1,0 +1,29 @@
+.side-nav{
+    background-color: #e12454;
+    height: 100vh;
+}
+.dash-head{
+    background-color: #00294b;
+    color: #fff;
+}
+.icon-pr3{
+    color: #e12454;
+    font-size: 35px;
+}
+.icon-pr3:hover{
+    color: #ffffff;
+    font-size: 35px;
+}
+.dash-nav{
+    background-color: #00294b;
+    padding: 5px 10px;
+    border: 1px solid #e12454;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.dash-nav:hover{
+    background-color: #ffffff;
+    color: #00294b;
+}
