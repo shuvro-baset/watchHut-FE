@@ -1,9 +1,9 @@
 .footer-bg{
-    background-color: #7868E6;
+    background-color: #00294b;
 }
 .logo-text{
     font-size: 30px;
-    color: rgb(10, 10, 36);
+    color: #e12454;
 }
 .icon-font{
     font-size: 30px;
@@ -26,6 +26,12 @@
   }
 
 .copyright-text{
-    background-color: #a29ffd;
-    color: #fff;
+    background-color: #012847e0;
+    color: rgb(122, 117, 117);
+}
+.icon-pr2{
+    color: #e12454;
+}
+.icon-pr2:hover{
+    color: #ffffff;
 }

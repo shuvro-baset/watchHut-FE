@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import 'swiper/swiper-bundle.min.css';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import Features from '../../components/Features/Features';
+import Rating from 'react-rating';
 
 
 const Home = () => {
@@ -68,34 +69,35 @@ const Home = () => {
                     )
                 }
                 </Row>
+            </Container>
+            <Container>
 
-                <Row>
-                    {
-                    reviews.map(review => 
-                            <Reviews
-                                key={review.key}
-                                review={review}
-                            >
-                            </Reviews>
-                    )
-                }
-                </Row>
-                <Row>
-                <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
 
-        {
-            reviews.map((slideContent, index) => 
-                    <SwiperSlide virtualIndex={index}>{slideContent.name}</SwiperSlide>
-                
-            )
-            
-            }      
-    </Swiper>
+            <Row className="my-5">
+                    <h2 className="my-3">Customer Reviews</h2>
+                    <Swiper
+                        spaceBetween={50}
+                        slidesPerView={3}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        >
+
+                            {
+                                reviews.map(review  => 
+                                        <SwiperSlide 
+                                        key={review.key}
+                                        ><Reviews
+                                    
+                                    review={review}
+                                >
+                                </Reviews>
+                                    
+                                        </SwiperSlide>
+                                    
+                                )
+                                
+                                }      
+                    </Swiper>
                 </Row>
             </Container>
 

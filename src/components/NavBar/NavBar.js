@@ -17,7 +17,7 @@ const NavBar = () => {
                 <Nav className="mx-auto">
                     <Link className="menu-item" to="/home">Home</Link>
                     <Link className="menu-item" to="/about">About</Link>
-                    <Link className="menu-item" to="/watches">WatchHut</Link>
+                    <Link className="menu-item" to="/watches">Explore Watch</Link>
 
                 </Nav>
 

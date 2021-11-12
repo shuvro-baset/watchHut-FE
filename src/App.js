@@ -12,6 +12,7 @@ import WatchHut from './pages/WatchHut/WatchHut';
 import WatchOrder from './pages/WatchOrder/WatchOrder';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
+import About from './pages/About/About';
 function App() {
   return (
     <>
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/about">
+            <About></About>
           </Route>
           
           <Route path="/watches">

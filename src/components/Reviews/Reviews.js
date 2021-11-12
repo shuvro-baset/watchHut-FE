@@ -1,54 +1,33 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-// Import Swiper styles
-import 'swiper/swiper-bundle.min.css';
+import { Card } from 'react-bootstrap';
+import Rating from 'react-rating';
+import './Reviews.css'
+
 const Reviews = (props) => {
     const {name, review, rating} = props.review;
-    const count = +rating;
 
     return (
                     
-            <Col md={3}>
-            <div>
-                        <h2>{name}</h2>
-                        <h2>{review}</h2>
-                        <h2> </h2>
-                        { count === 1 && <i className="fas fa-star"></i>
-                            
-                        }
-                        { count === 2 && <div><i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i></div>
-                            
-                        }
-                        { count === 3 && <div><i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            
-                                            </div>
+        <Card className="text-center shadow py-3 rounded">
+                <Card.Title><i className="fas fa-user icon-pr"></i></Card.Title>
+                <Card.Body>
+                    <h6>{name}</h6>
+                    <p>{review.slice(0,100)}</p>
+                </Card.Body>
+                <Card.Footer className="bg-transparent border-0"><Rating
+                    className="rating-icon"
+                    readonly
+                    initialRating={rating}
+                    emptySymbol="far fa-star"
+                    fullSymbol="fas fa-star"
+                    fractions={2}
+                />
+                </Card.Footer>
 
-
-                        }
-                        { count === 4 && <div><i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i></div>
-
-
-                        }
-                        { count === 5 && <div><i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            </div>
-                            
-                        }
-
-                    </div>
-            </Col>
+        </Card>
                     
     );
 };
 
 export default Reviews;
+
