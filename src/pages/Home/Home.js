@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css';
 import Subscribe from '../../components/Subscribe/Subscribe';
+import Features from '../../components/Features/Features';
 
 
 const Home = () => {
@@ -99,6 +100,7 @@ const Home = () => {
             </Container>
 
         <Subscribe></Subscribe>
+        <Features></Features>
             
         </>
     );

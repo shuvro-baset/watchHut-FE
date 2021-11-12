@@ -18,3 +18,10 @@
     border-radius: 5px;
     padding: 5px 10px;
 }
+.btn-order:hover{
+    background-color: #00294b;
+    color: #e12454;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
