@@ -26,7 +26,7 @@ const Home = () => {
         .then(data => setWatches(data))
     }, [])
 
-    // getting watches information
+    // getting review information
     useEffect(() => {
         fetch('http://localhost:5000/all-review')
         .then(res => res.json())

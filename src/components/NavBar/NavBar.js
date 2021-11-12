@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './NavBar.css'
-
+import logo from '../../images/Logo.png'
 
 const NavBar = () => {
     const { user, logout } = useAuth();
@@ -14,6 +14,7 @@ const NavBar = () => {
         {/* menu part */}
         <Navbar sticky="top" className="navBar navBg" expand="lg">
             <Container fluid>
+            <Navbar.Brand> <img src={logo} alt="" /> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
