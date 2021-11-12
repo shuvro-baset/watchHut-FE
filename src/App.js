@@ -10,7 +10,6 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
 import WatchHut from './pages/WatchHut/WatchHut';
 import WatchOrder from './pages/WatchOrder/WatchOrder';
-import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 function App() {
@@ -18,7 +17,6 @@ function App() {
     <>
       <AuthProvider>
       <Router>
-      <NavBar></NavBar>
         <Switch>
           <Route exact path="/">
             <Home></Home>
