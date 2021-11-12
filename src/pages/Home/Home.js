@@ -6,6 +6,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Reviews from '../../components/Reviews/Reviews';
 import Banner from '../../components/Banner/Banner';
 
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css';
+import Subscribe from '../../components/Subscribe/Subscribe';
+
+
 const Home = () => {
     // set state for all watches
     const [watches, setWatches] = useState([]);
@@ -61,6 +67,7 @@ const Home = () => {
                     )
                 }
                 </Row>
+
                 <Row>
                     {
                     reviews.map(review => 
@@ -72,8 +79,26 @@ const Home = () => {
                     )
                 }
                 </Row>
+                <Row>
+                <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+
+        {
+            reviews.map((slideContent, index) => 
+                    <SwiperSlide virtualIndex={index}>{slideContent.name}</SwiperSlide>
+                
+            )
+            
+            }      
+    </Swiper>
+                </Row>
             </Container>
 
+        <Subscribe></Subscribe>
             
         </>
     );

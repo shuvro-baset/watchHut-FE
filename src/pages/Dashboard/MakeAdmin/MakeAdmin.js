@@ -28,16 +28,15 @@ const MakeAdmin = () => {
                     setSuccess(true);
                 }
             })
-
         e.preventDefault()
     }
     return (
         <div>
             <h3>make new admin from here........</h3>
-            <Form onSubmit={handleMakeAdmin}>
-                <input onBlur={handleOnBlur} type="email" placeholder="name" /> <br />
-                <button type="submit">Register</button>
-            </Form>
+                <Form onSubmit={handleMakeAdmin}>
+                    <input onBlur={handleOnBlur} type="email" placeholder="name" /> <br />
+                    <button type="submit">Register</button>
+                </Form>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
         </div>
     );
