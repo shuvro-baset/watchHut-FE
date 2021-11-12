@@ -12,6 +12,7 @@ import 'swiper/swiper-bundle.min.css';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import Features from '../../components/Features/Features';
 import Rating from 'react-rating';
+import NavBar from '../../components/NavBar/NavBar';
 
 
 const Home = () => {
@@ -35,6 +36,7 @@ const Home = () => {
 
     return (
         <>
+            <NavBar></NavBar>
             <Banner></Banner>
             <Container>
                 <Row className="my-5">

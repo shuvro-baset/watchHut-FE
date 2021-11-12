@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './NavBar.css'
@@ -16,9 +16,8 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
                     <Link className="menu-item" to="/home">Home</Link>
-                    <Link className="menu-item" to="/about">About</Link>
                     <Link className="menu-item" to="/watches">Explore Watch</Link>
-
+                    <Link className="menu-item" to="/about">About</Link>
                 </Nav>
 
                 <Nav className="mr-auto">
