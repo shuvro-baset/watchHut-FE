@@ -21,3 +21,11 @@
     margin-top: 10px;
     color: #000;
 }
+.login-div select{
+    border: 1px solid #e12454;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    color: #000;
+}
