@@ -43,7 +43,7 @@ const Login = () => {
                         </Form>
                         <button className="btn btn-primary"onClick={handleGoogleSignIn}>Google SignIn </button>
 
-                        <p className="my-2">Dont have account? <Link to="/register">Register</Link> here </p>
+                        <p className="my-2">Dont have account? <Link to="/register">Register</Link></p>
                         <p>Back To Home <Link to="/home" className="btn icon-pr"><i className="fas fa-home"></i></Link></p>
                         {user?.email && <Alert severity="success">Login successfully!</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
