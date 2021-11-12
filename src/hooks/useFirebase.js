@@ -11,6 +11,8 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [isAdminLoading, setIsAdminLoading] = useState(true);
+
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
@@ -75,6 +77,13 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                setIsAdminLoading(true)
+                axios.get(`http://localhost:5000/user/${user.email}`)
+                .then((res) => {
+                    setAdmin(res.data.admin);
+                    })
+                    .finally(() => setIsAdminLoading(false));
+                    ;
                 getIdToken(user)
                     .then(idToken => {
                         setToken(idToken);
@@ -96,11 +105,11 @@ const useFirebase = () => {
     //             // setIsLoading(false);
     //             })
     // }, [user.email])
-    useEffect(() => {
-        axios.get(`http://localhost:5000/users/${user?.email}`).then((res) => {
-          setAdmin(res.data.admin);
-        });
-      }, [user?.email]);
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/user/${user.email}`).then((res) => {
+    //       setAdmin(res.data.admin);
+    //     });
+    //   }, [user.email]);
     
     const logout = () => {
         setIsLoading(true);
@@ -130,6 +139,7 @@ const useFirebase = () => {
         token,
         isLoading,
         authError,
+        isAdminLoading, 
         registerUser,
         loginUser,
         signInWithGoogle,

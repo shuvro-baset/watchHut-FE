@@ -6,10 +6,10 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const AdminRoute = ({ children, ...rest }) => {
-    const {user, admin, isLoading} = useAuth()
+    const {user, admin, isAdminLoading} = useAuth()
     console.log( admin, "laksdjfljsadf");
 
-    if (isLoading) {
+    if (isAdminLoading) {
         // showing spinner when reload page.
         return <Col className="d-flex justify-content-center align-items-center my-3" ><Spinner animation="border" variant="primary" /></Col>
     }
@@ -17,7 +17,7 @@ const AdminRoute = ({ children, ...rest }) => {
         <Route
             {...rest}
             render={({ location }) =>
-                user?.email && admin ?  (
+                user.email && admin ?  (
                     children
                 ) : (
                     <Redirect
