@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+import {  Container, Row, Table } from 'react-bootstrap';
 import './ManageOrders.css'
 
 
 const ManageOrders = () => {
-    // user data from useAuth
-    const {user} = useAuth()
     // set state for myOrders
     const [orders, setOrders] = useState([])
 

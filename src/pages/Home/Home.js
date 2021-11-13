@@ -70,7 +70,7 @@ const Home = () => {
                     {
                     watches.slice(2,8).map(watch => 
                             <SmartWatch
-                                key={watch.key}
+                                key={watch._id}
                                 watch={watch}
                             ></SmartWatch>
                     )
@@ -95,7 +95,7 @@ const Home = () => {
                             {
                                 reviews.map(review  => 
                                         <SwiperSlide 
-                                        key={review.key}
+                                        key={review._id}
                                         ><Reviews
                                     
                                     review={review}

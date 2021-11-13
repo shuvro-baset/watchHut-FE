@@ -21,7 +21,7 @@ const WatchHut = () => {
                 {
                     watches.map(watch => 
                             <SmartWatch
-                                key={watch.key}
+                                key={watch._id}
                                 watch={watch}
                             ></SmartWatch>
                     )

@@ -50,7 +50,7 @@ const MakeAdmin = () => {
                     <Form onSubmit={handleMakeAdmin} className="login-div">
                         <select onBlur={handleOnBlur}>
                            { users.map(user =>
-                            <option value={user.email}> {user.email} </option>
+                            <option key={user._id} value={user.email}> {user.email} </option>
                            )}
                         </select>
                         <br />

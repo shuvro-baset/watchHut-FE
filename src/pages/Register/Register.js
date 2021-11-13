@@ -8,7 +8,7 @@ import register from '../../images/signup.png'
 const Register = () => {
     const [registerData, setRegisterData] = useState({});
     const history = useHistory();
-    const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser,  authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;

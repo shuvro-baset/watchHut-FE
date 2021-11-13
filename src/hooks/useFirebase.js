@@ -48,7 +48,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/dashboard';
                 history.replace(destination);
                 setAuthError('');
             })
@@ -114,11 +114,9 @@ const useFirebase = () => {
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
-            // Sign-out successful.
         }).catch((error) => {
-            // An error happened.
         })
-            .finally(() => setIsLoading(false));
+        .finally(() => setIsLoading(false));
     }
 
     const saveUser = (email, displayName, method) => {
@@ -131,6 +129,9 @@ const useFirebase = () => {
             body: JSON.stringify(user)
         })
             .then()
+            .catch((error) => {
+                setAuthError(error.message);
+            })
     }
 
     return {
