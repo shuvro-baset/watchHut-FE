@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import './Banner.css'
 const Banner = () => {
     return (
-        
+        // banner part 
         <Container fluid>
             <Row className='banner-div d-flex justify-content-center'>
                 <Col md={6}  className="d-flex flex-column justify-content-center align-items-start">

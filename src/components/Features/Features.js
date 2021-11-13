@@ -3,6 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const Features = () => {
     return (
+
+        // feature part 
         <Container>
             <Row className="my-5 features">
                 <Col md={4}>

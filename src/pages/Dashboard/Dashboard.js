@@ -15,8 +15,10 @@ import './Dashboard.css'
 
 
 const Dashboard = () => {
+
     const {user, logout, admin, isLoading} = useAuth()
     
+    // set path 
     let { path, url } = useRouteMatch();
     if (isLoading) {
         // showing spinner when reload page.

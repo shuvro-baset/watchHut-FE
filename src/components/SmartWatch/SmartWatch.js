@@ -5,7 +5,11 @@ import './SmartWatch.css'
 
 
 const SmartWatch = (props) => {
+
+    // destructuring watch products property
     const {_id, title, description, image, price} = props.watch;
+
+    
     return (
         <>
             <Col md={4} className="my-3">

@@ -8,11 +8,14 @@ import review from '../../../images/review.png'
 
 
 const Review = () => {
+    // get user state
     const {user} = useAuth();
     // react hook form
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    // initialize rating
     const [rating, setRating] = useState(1)
 
+    // handle review 
     const onSubmit = data => {
         data.name = user.displayName;
         data.rating = rating;
@@ -24,17 +27,18 @@ const Review = () => {
 
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    alert('review added successfully');
                     reset();
 
                 }
             })
 }
 
+    // taking rating input 
     const ratingChanged = (newRating) => {
-        console.log(newRating);
         setRating(newRating);
         };
+        
     return (
         <Container>
 

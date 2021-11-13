@@ -6,19 +6,25 @@ import login from '../../images/login.png'
 import './Login.css'
 
 const Login = () => {
+    // set login data
     const [loginData, setLoginData] = useState({});
+    // getting required info from useAuth hooks
     const { user, loginUser, signInWithGoogle, authError } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
+    // handle login info
     const handleLogin = e => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
 
+    // handle google signIn
     const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
     }
+
+    // getting form data.
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;

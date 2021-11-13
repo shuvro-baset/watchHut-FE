@@ -6,6 +6,7 @@ import './NavBar.css'
 import logo from '../../images/Logo.png'
 
 const NavBar = () => {
+    // getting user from useAuth
     const { user, logout } = useAuth();
 
     return (

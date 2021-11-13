@@ -7,7 +7,6 @@ import useAuth from '../../../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const {user, admin, isAdminLoading} = useAuth()
-    console.log( admin, "admin");
 
     if (isAdminLoading) {
         // showing spinner when reload page.

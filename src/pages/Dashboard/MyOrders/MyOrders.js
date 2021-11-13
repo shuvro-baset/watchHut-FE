@@ -3,23 +3,23 @@ import { Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import './MyOrders.css'
 const MyOrders = () => {
+
     // user data from useAuth
     const {user} = useAuth()
     // set state for myOrders
     const [orders, setOrders] = useState([])
 
-    // getting  order data
+    // getting  orders data
     useEffect(() => {
         fetch('http://localhost:5000/orders')
         // fetch('https://agile-shelf-31650.herokuapp.com/orders')
-
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
     // filtering my order data
     const myOrders = orders.filter(order => order.email === user.email)
 
-     // DELETE  booking order
+     // DELETE order
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {

@@ -9,18 +9,27 @@ import axios from 'axios';
 initializeAuthentication();
 
 const useFirebase = () => {
+    // set state for user
     const [user, setUser] = useState({});
+    // handle loading state
     const [isLoading, setIsLoading] = useState(true);
+    // handle admin loading state
     const [isAdminLoading, setIsAdminLoading] = useState(true);
-
+    // set error
     const [authError, setAuthError] = useState('');
+    // set register error
     const [regError, setRegError] = useState('');
+    // set admin 
     const [admin, setAdmin] = useState(false);
+    // set token
     const [token, setToken] = useState('');
 
+    // getAuth
     const auth = getAuth();
+    // google auth provider
     const googleProvider = new GoogleAuthProvider();
 
+    // new user register function
     const registerUser = (email, password, name, history) => {
         console.log("reg hit: ");
         setIsLoading(true);
@@ -31,7 +40,7 @@ const useFirebase = () => {
                 setUser(newUser);
                 // save user to the database
                 saveUser(email, name, 'POST');
-                // send name to firebase after creation
+                // update user name
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -47,6 +56,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // login user function
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -61,6 +71,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // sign in with google
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -75,7 +86,7 @@ const useFirebase = () => {
             }).finally(() => setIsLoading(false));
     }
 
-    // observer user state
+    // user onAuth state change handle
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -116,6 +127,7 @@ const useFirebase = () => {
     //     });
     //   }, [user.email]);
     
+    // logout functionality
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
@@ -124,6 +136,7 @@ const useFirebase = () => {
         .finally(() => setIsLoading(false));
     }
 
+    // save user functionality 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
         fetch('http://localhost:5000/users', {
@@ -141,6 +154,7 @@ const useFirebase = () => {
             })
     }
 
+    
     return {
         user,
         admin,

@@ -17,6 +17,7 @@ import './Home.css'
 const Home = () => {
     // set state for all watches
     const [watches, setWatches] = useState([]);
+    // set state for all reviews
     const [reviews, setReviews] = useState([]);
     
     // getting watches information
@@ -88,9 +89,9 @@ const Home = () => {
                 </div>
                     <Swiper
                         breakpoints={{
-                            // when window width is >= 640px
-                            319: {
-                            width: 319,
+                            // when window width is >= 300px
+                            300: {
+                            width: 300,
                             slidesPerView: 1,
                             },
                             // when window width is >= 640px

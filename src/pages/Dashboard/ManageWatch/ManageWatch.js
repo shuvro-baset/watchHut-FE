@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import './ManageWatch.css'
 
 const ManageWatch = () => {
+    // set watch products
     const [watches, setWatches] = useState([])
 
     // getting watches information

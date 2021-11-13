@@ -6,10 +6,13 @@ import register from '../../images/signup.png'
 
 
 const Register = () => {
+
+    // set register data 
     const [registerData, setRegisterData] = useState({});
     const history = useHistory();
     const { user, registerUser,  regError } = useAuth();
 
+    // getting form data
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -18,8 +21,8 @@ const Register = () => {
         setRegisterData(newRegisterData);
     }
 
+    // handle register 
     const handleRegister = e => {
-        
         registerUser(registerData.email, registerData.password, registerData.name, history);
         e.preventDefault();
     }

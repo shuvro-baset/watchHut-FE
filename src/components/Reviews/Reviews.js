@@ -4,6 +4,7 @@ import Rating from 'react-rating';
 import './Reviews.css'
 
 const Reviews = (props) => {
+    // destructuring review property
     const {name, review, rating} = props.review;
 
     return (

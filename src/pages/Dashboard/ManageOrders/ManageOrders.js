@@ -4,7 +4,7 @@ import './ManageOrders.css'
 
 
 const ManageOrders = () => {
-    // set state for myOrders
+    // set state for all Orders
     const [orders, setOrders] = useState([])
 
     // getting  order data
@@ -16,7 +16,7 @@ const ManageOrders = () => {
         .then(data => setOrders(data))
     }, [])
 
-     // DELETE  booking order
+     // DELETE  order
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
@@ -37,7 +37,7 @@ const ManageOrders = () => {
         }
     }
 
-    // update status
+    // update order status
     const handleStatus = id => {
         console.log("I am hitting");
         const updateStatus = {

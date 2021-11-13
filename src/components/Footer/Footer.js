@@ -5,6 +5,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
+        // footer part 
         <Container fluid className="footer-bg ">
             <Row className="pt-5">
             {/* footer part 1st column */}
@@ -51,7 +52,7 @@ const Footer = () => {
                     </div>
                 </Col>
 
-            {/* footer part 4th column */}
+            {/* footer part 3rd column */}
 
                 <Col md={4}>
                     <div className="text-white p-3 contact">

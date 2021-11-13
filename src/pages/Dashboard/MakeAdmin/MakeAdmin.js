@@ -3,14 +3,21 @@ import { Alert, Container, Form, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const MakeAdmin = () => {
+    // set email
     const [email, setEmail] = useState('');
+    // set success message
     const [success, setSuccess] = useState(false);
+    // get token
     const { token } = useAuth();
+    // set all users
     const [users, setUsers] = useState([])
 
+    // get input value
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }
+
+    // make admin 
     const handleMakeAdmin = e => {
         console.log("makeAdmin hitted ", email);
         const user = { email };
@@ -33,6 +40,7 @@ const MakeAdmin = () => {
             })
         e.preventDefault()
     }
+    
     // getting watches information
     useEffect(() => {
         fetch('http://localhost:5000/all-users')
