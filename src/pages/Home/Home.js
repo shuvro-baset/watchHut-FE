@@ -15,6 +15,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import './Home.css'
 
 const Home = () => {
+    
     // set state for all watches
     const [watches, setWatches] = useState([]);
     // set state for all reviews
@@ -22,20 +23,21 @@ const Home = () => {
     
     // getting watches information
     useEffect(() => {
-        fetch('http://localhost:5000/watches')
-        // fetch('https://agile-shelf-31650.herokuapp.com/watches')
+        // fetch('http://localhost:5000/watches')
+        fetch('https://agile-shelf-31650.herokuapp.com/watches')
         .then(res => res.json())
         .then(data => setWatches(data))
     }, [])
 
     // getting review information
     useEffect(() => {
-        fetch('http://localhost:5000/all-review')
-        // fetch('https://agile-shelf-31650.herokuapp.com/all-review')
+        // fetch('http://localhost:5000/all-review')
+        fetch('https://agile-shelf-31650.herokuapp.com/all-review')
         .then(res => res.json())
         .then(data => setReviews(data))
     }, [])
 
+   
     return (
         <>
             <NavBar></NavBar>

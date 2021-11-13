@@ -11,8 +11,8 @@ const MyOrders = () => {
 
     // getting  orders data
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
-        // fetch('https://agile-shelf-31650.herokuapp.com/orders')
+        // fetch('http://localhost:5000/orders')
+        fetch('https://agile-shelf-31650.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
@@ -23,8 +23,8 @@ const MyOrders = () => {
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
-            // const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
+            // const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
@@ -72,7 +72,7 @@ const MyOrders = () => {
                         </Col>
                         <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
                         {
-                            order.status === 'shipped' && <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
+                            order.status === 'pending' && <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
                         }
                         </Col>
                     </Row>

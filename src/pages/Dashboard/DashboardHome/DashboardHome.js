@@ -10,7 +10,7 @@ const DashboardHome = () => {
                 </Col>
                 <Col md={6}>
                     <div className="welcome-div d-flex justify-content-center align-items-center">
-                        <p>Manage Your Orders <br /> and Reviews</p>
+                        <p>Manage Your Orders <br /> and Reviews  <br /> from here...</p>
                     </div>
                 </Col>
 
