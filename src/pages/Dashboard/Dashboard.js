@@ -38,9 +38,9 @@ const Dashboard = () => {
                                 { admin && <Link className="dash-nav" to={`${url}/manageWatch`}>Manage Watch</Link>}
                                 { admin && <Link className="dash-nav" to={`${url}/manageOrders`}>Manage Orders</Link>}
 
-                                <Link className="dash-nav" to={`${url}/pay`}>Payment</Link> 
-                                <Link className="dash-nav" to={`${url}/myOrder`}>My Orders</Link> 
-                                <Link className="dash-nav" to={`${url}/review`}>Review</Link> 
+                                { user && !admin && <Link className="dash-nav" to={`${url}/pay`}>Payment</Link> }
+                                { user && !admin && <Link className="dash-nav" to={`${url}/myOrder`}>My Orders</Link> }
+                               { user && !admin &&  <Link className="dash-nav" to={`${url}/review`}>Review</Link> }
                                 <Link className="dash-nav" onClick={logout} to="/home">Logout</Link>
                             </Nav>
 

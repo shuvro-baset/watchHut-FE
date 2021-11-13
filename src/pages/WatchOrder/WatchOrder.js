@@ -25,8 +25,8 @@ const WatchOrder = () => {
 
     // getting single watch info
     useEffect(() => {
-        // const uri = `http://localhost:5000/watch/${watchId}`
-        const uri = `https://agile-shelf-31650.herokuapp.com/watch/${watchId}`
+        const uri = `http://localhost:5000/watch/${watchId}`
+        // const uri = `https://agile-shelf-31650.herokuapp.com/watch/${watchId}`
 
         fetch(uri)
         .then(res => res.json())
@@ -40,8 +40,8 @@ const WatchOrder = () => {
         data.status = 'pending';
 
     // watch order
-    // axios.post(`http://localhost:5000/order-watch`, data)
-        axios.post(`https://agile-shelf-31650.herokuapp.com/order-watch`, data)
+    axios.post(`http://localhost:5000/order-watch`, data)
+        // axios.post(`https://agile-shelf-31650.herokuapp.com/order-watch`, data)
             .then(response => {
                 console.log("order watch: ", response);
                 if (response.data.acknowledged) {

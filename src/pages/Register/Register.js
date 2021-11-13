@@ -39,8 +39,8 @@ const Register = () => {
                         </Form>
                         <p>already have account? <Link to="/login">login</Link> </p>
                         
-                        {user?.email && <Alert severity="success">User Created successfully!</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
+                        {user?.email && <Alert variant="success">User Created successfully!</Alert>}
+                        {authError && <Alert variant="danger">{authError}</Alert>}
                         <p>Back To Home <Link to="/home" className="btn icon-pr"><i className="fas fa-home"></i></Link></p>
                     </div>
                 </Col>

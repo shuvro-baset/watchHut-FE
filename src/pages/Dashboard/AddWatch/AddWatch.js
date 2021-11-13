@@ -11,8 +11,8 @@ const AddWatch = () => {
     const onSubmit = data => {
         
     // POST method for adding new tour
-    // axios.post('http://localhost:5000/add-watch', data)
-    axios.post('https://agile-shelf-31650.herokuapp.com/add-watch', data)
+    axios.post('http://localhost:5000/add-watch', data)
+    // axios.post('https://agile-shelf-31650.herokuapp.com/add-watch', data)
 
             .then(res => {
                 if (res.data.insertedId) {

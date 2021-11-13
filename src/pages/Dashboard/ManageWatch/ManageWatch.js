@@ -7,8 +7,8 @@ const ManageWatch = () => {
 
     // getting watches information
     useEffect(() => {
-        // fetch('http://localhost:5000/watches')
-        fetch('https://agile-shelf-31650.herokuapp.com/watches')
+        fetch('http://localhost:5000/watches')
+        // fetch('https://agile-shelf-31650.herokuapp.com/watches')
         .then(res => res.json())
         .then(data => setWatches(data))
     }, [])
@@ -17,8 +17,8 @@ const ManageWatch = () => {
     const handleDeleteWatch = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            // const url = `http://localhost:5000/watch/${id}`;
-            const url = `https://agile-shelf-31650.herokuapp.com/watch/${id}`;
+            const url = `http://localhost:5000/watch/${id}`;
+            // const url = `https://agile-shelf-31650.herokuapp.com/watch/${id}`;
 
             fetch(url, {
                 method: 'DELETE'

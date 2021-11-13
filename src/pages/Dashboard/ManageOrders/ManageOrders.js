@@ -9,8 +9,8 @@ const ManageOrders = () => {
 
     // getting  order data
     useEffect(() => {
-        // fetch('http://localhost:5000/orders')
-        fetch('https://agile-shelf-31650.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
+        // fetch('https://agile-shelf-31650.herokuapp.com/orders')
 
         .then(res => res.json())
         .then(data => setOrders(data))
@@ -20,8 +20,8 @@ const ManageOrders = () => {
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            // const url = `http://localhost:5000/orders/${id}`;
-            const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
+            // const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
@@ -44,8 +44,8 @@ const ManageOrders = () => {
                 status: 'Shipped'
         }
 
-        // const uri = `http://localhost:5000/update-status/${id}`;
-        const uri = `https://agile-shelf-31650.herokuapp.com/update-status/${id}`;
+        const uri = `http://localhost:5000/update-status/${id}`;
+        // const uri = `https://agile-shelf-31650.herokuapp.com/update-status/${id}`;
 
         fetch(uri, {
             method: 'PUT',
@@ -58,8 +58,8 @@ const ManageOrders = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Update Successful');
-                    // fetch('http://localhost:5000/orders')
-                    fetch('https://agile-shelf-31650.herokuapp.com/orders')
+                    fetch('http://localhost:5000/orders')
+                    // fetch('https://agile-shelf-31650.herokuapp.com/orders')
 
                         .then(res => res.json())
                         .then(data => setOrders(data))
