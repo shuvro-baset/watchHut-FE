@@ -14,6 +14,7 @@ const useFirebase = () => {
     const [isAdminLoading, setIsAdminLoading] = useState(true);
 
     const [authError, setAuthError] = useState('');
+    const [regError, setRegError] = useState('');
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
 
@@ -21,10 +22,11 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const registerUser = (email, password, name, history) => {
+        console.log("reg hit: ");
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
-                setAuthError('');
+                setRegError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
@@ -34,11 +36,12 @@ const useFirebase = () => {
                     displayName: name
                 }).then(() => {
                 }).catch((error) => {
+                    setRegError(error.message)
                 });
                 history.replace('/');
             })
             .catch((error) => {
-                setAuthError(error.message);
+                setRegError(error.message);
                 console.log(error);
             })
             .finally(() => setIsLoading(false));
@@ -145,6 +148,7 @@ const useFirebase = () => {
         isLoading,
         authError,
         isAdminLoading, 
+        regError,
         registerUser,
         loginUser,
         signInWithGoogle,

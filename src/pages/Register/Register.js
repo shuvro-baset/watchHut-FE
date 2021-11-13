@@ -8,7 +8,7 @@ import register from '../../images/signup.png'
 const Register = () => {
     const [registerData, setRegisterData] = useState({});
     const history = useHistory();
-    const { user, registerUser,  authError } = useAuth();
+    const { user, registerUser,  regError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -32,15 +32,15 @@ const Register = () => {
                     <div className="shadow py-3 m-5 rounded login-div text-center">
                         <h2 className="my-3">Register</h2>
                         <Form onSubmit={handleRegister}>
-                            <input onBlur={handleOnBlur} name="name" type="text" placeholder="name" /> <br />
-                            <input onBlur={handleOnBlur} name="email" type="text" placeholder="email" /> <br />
-                            <input onBlur={handleOnBlur} name="password" type="password" placeholder="password" /> <br />
+                            <input onBlur={handleOnBlur} required name="name" type="text" placeholder="name" /> <br />
+                            <input onBlur={handleOnBlur} required name="email" type="email" placeholder="email" /> <br />
+                            <input onBlur={handleOnBlur} required name="password" type="password" placeholder="password" /> <br />
                             <button className="btn btn-order my-2" type="submit">Register</button>
                         </Form>
                         <p>already have account? <Link to="/login">login</Link> </p>
                         
                         {user?.email && <Alert variant="success">User Created successfully!</Alert>}
-                        {authError && <Alert variant="danger">{authError}</Alert>}
+                        {regError && <Alert variant="danger">{regError}</Alert>}
                         <p>Back To Home <Link to="/home" className="btn icon-pr"><i className="fas fa-home"></i></Link></p>
                     </div>
                 </Col>
