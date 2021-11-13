@@ -81,7 +81,6 @@ const Home = () => {
             </Container>
             <Container>
 
-
             <Row className="my-5">
                 <div className="mt-3 mb-5">
                     <h2 className="div-head">Customer Reviews </h2>

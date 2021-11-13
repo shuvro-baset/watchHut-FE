@@ -42,7 +42,7 @@ const MakeAdmin = () => {
         .then(data => setUsers(data))
     }, [])
 
-
+    
     return (
         <Container className="my-5">
             <Row>
@@ -54,13 +54,15 @@ const MakeAdmin = () => {
                     <Form onSubmit={handleMakeAdmin} className="login-div">
                         <select onBlur={handleOnBlur}>
                            { users.map(user =>
-                            <option key={user._id} value={user.email}> {user.email} </option>
+                            <option key={user._id} value={user.email}> {user.email } </option>
                            )}
                         </select>
                         <br />
                         <button className="btn btn-order my-3" type="submit">submit</button>
                     </Form>
                 {success && <Alert variant="success">Admin made successfully!</Alert>}
+
+               
             </div>
             </Row>
         </Container>
