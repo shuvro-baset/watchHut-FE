@@ -74,6 +74,9 @@ const MyOrders = () => {
                         {
                             order.status === 'pending' && <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
                         }
+                        {
+                            order.status === 'Shipped' && <button disabled className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
+                        }
                         </Col>
                     </Row>
                 )

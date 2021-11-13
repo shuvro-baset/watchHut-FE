@@ -48,7 +48,7 @@ const Review = () => {
                     <div className="underline"></div>
                 </div>
                 <Col md={6}>
-                    <div className="shadow py-3 m-5 rounded login-div text-center">
+                    <div className="py-3 login-div text-center">
                     <form onSubmit={handleSubmit(onSubmit)} className="form-info d-flex flex-column justify-content-center align-items-center">
                         <label>Review</label> <br />
                         <textarea rows="4" cols="40" {...register("review", { required: true })} /> <br />
