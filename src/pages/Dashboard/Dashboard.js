@@ -12,7 +12,7 @@ import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Review from './Review/Review';
 import './Dashboard.css'
-
+import NotFound from './../NotFound/NotFound'
 
 const Dashboard = () => {
 
@@ -86,6 +86,9 @@ const Dashboard = () => {
                         
                         <Route path={`${path}/review`}>
                             <Review></Review>
+                        </Route>
+                        <Route path="*">
+                            <NotFound></NotFound>
                         </Route>
                         
                     </Switch>
