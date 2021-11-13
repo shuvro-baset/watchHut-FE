@@ -1,4 +1,4 @@
-# SP WatchHut
+# `SP WatchHut`
 
 [Live Site Link](https://spwatchhut.web.app/).
 
@@ -16,4 +16,4 @@
 * New offers and some special offer for valuable customers.
 
     
-- Please visit our website, you can get some valuable information here. If you need any smart watch Sp WatchHut is the best choice for you.
+- Please visit our website, you can get some valuable information here. If you need any smart watch `Sp WatchHut` is the best choice for you.
