@@ -45,7 +45,7 @@ const WatchOrder = () => {
             .then(response => {
                 console.log("order watch: ", response);
                 if (response.data.acknowledged) {
-                    alert('added successfully');
+                    alert('Order added successfully');
                     reset();
                     history.push(redirect_uri);
                 }

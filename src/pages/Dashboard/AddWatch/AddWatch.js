@@ -16,7 +16,7 @@ const AddWatch = () => {
 
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    alert('New Watch added successfully');
                     reset();
 
                 }

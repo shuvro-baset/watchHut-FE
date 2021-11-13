@@ -71,7 +71,9 @@ const MyOrders = () => {
                             <p>{order.status}</p>
                         </Col>
                         <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
+                        {
+                            order.status === 'shipped' && <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
+                        }
                         </Col>
                     </Row>
                 )
