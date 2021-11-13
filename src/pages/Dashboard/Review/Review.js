@@ -19,7 +19,9 @@ const Review = () => {
         console.log(data);
 
     // POST method for give a review
-    axios.post('http://localhost:5000/review', data)
+    // axios.post('http://localhost:5000/review', data)
+    axios.post('https://agile-shelf-31650.herokuapp.com/review', data)
+
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');

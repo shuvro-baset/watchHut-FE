@@ -9,7 +9,9 @@ const ManageOrders = () => {
 
     // getting  order data
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        // fetch('http://localhost:5000/orders')
+        fetch('https://agile-shelf-31650.herokuapp.com/orders')
+
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
@@ -18,7 +20,9 @@ const ManageOrders = () => {
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            // const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
+
             fetch(url, {
                 method: 'DELETE'
             })
@@ -40,7 +44,9 @@ const ManageOrders = () => {
                 status: 'Shipped'
         }
 
-        const uri = `http://localhost:5000/update-status/${id}`;
+        // const uri = `http://localhost:5000/update-status/${id}`;
+        const uri = `https://agile-shelf-31650.herokuapp.com/update-status/${id}`;
+
         fetch(uri, {
             method: 'PUT',
             headers: {
@@ -52,7 +58,9 @@ const ManageOrders = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Update Successful');
-                    fetch('http://localhost:5000/orders')
+                    // fetch('http://localhost:5000/orders')
+                    fetch('https://agile-shelf-31650.herokuapp.com/orders')
+
                         .then(res => res.json())
                         .then(data => setOrders(data))
                 }
@@ -102,30 +110,7 @@ const ManageOrders = () => {
                     
                 </Table> 
             </Row>
-            {/* showing order data */}
             
-            {/* {
-                orders.map(order => 
-                    <Row className="my-5 my-order"
-                        key={order._id}>
-                        <Col md={3} className="text-center">
-                            <img className="img-fluid rounded" src={order.watch.image} alt="" />
-                        </Col>
-                        <Col md={3} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <h4>{order.watch.title}</h4>
-                        </Col>
-                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <p>{order.watch.price} <i className="fas fa-dollar-sign"></i></p>
-                        </Col>
-                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                        <button className="btn btn-watch" onClick={() => handleStatus(order._id)}>{order.status === "Shipped" ? "Shipped" : order.status}</button>
-                        </Col>
-                        <Col md={2} className="text-center d-flex flex-column justify-content-center align-items-center">
-                            <button className="btn btn-danger" onClick={() => handleDeleteOrder(order._id)}>delete</button>
-                        </Col>
-                    </Row>
-                )
-            } */}
         </Container>
     );
 };

@@ -9,7 +9,9 @@ const WatchHut = () => {
     
     // getting watches information
     useEffect(() => {
-        fetch('http://localhost:5000/watches')
+        // fetch('http://localhost:5000/watches')
+        fetch('https://agile-shelf-31650.herokuapp.com/watches')
+
         .then(res => res.json())
         .then(data => setWatches(data))
     }, [])

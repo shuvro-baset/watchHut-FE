@@ -14,7 +14,9 @@ const MakeAdmin = () => {
     const handleMakeAdmin = e => {
         console.log("makeAdmin hitted ", email);
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        // fetch('http://localhost:5000/users/admin', {
+        fetch('https://agile-shelf-31650.herokuapp.com/users/admin', {
+
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -33,7 +35,9 @@ const MakeAdmin = () => {
     }
     // getting watches information
     useEffect(() => {
-        fetch('http://localhost:5000/all-users')
+        // fetch('http://localhost:5000/all-users')
+        fetch('https://agile-shelf-31650.herokuapp.com/all-users')
+
         .then(res => res.json())
         .then(data => setUsers(data))
     }, [])

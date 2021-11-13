@@ -10,7 +10,9 @@ const MyOrders = () => {
 
     // getting  order data
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        // fetch('http://localhost:5000/orders')
+        fetch('https://agile-shelf-31650.herokuapp.com/orders')
+
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
@@ -21,7 +23,9 @@ const MyOrders = () => {
      const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            // const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://agile-shelf-31650.herokuapp.com/orders/${id}`;
+
             fetch(url, {
                 method: 'DELETE'
             })

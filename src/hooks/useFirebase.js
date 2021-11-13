@@ -78,7 +78,9 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
                 setIsAdminLoading(true)
-                axios.get(`http://localhost:5000/user/${user.email}`)
+                // axios.get(`http://localhost:5000/user/${user.email}`)
+                axios.get(`https://agile-shelf-31650.herokuapp.com/user/${user.email}`)
+
                 .then((res) => {
                     setAdmin(res.data.admin);
                     })
@@ -121,7 +123,9 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        // fetch('http://localhost:5000/users', {
+        fetch('https://agile-shelf-31650.herokuapp.com/users', {
+
             method: method,
             headers: {
                 'content-type': 'application/json'
