@@ -88,10 +88,28 @@ const Home = () => {
                     <div className="underline"></div>
                 </div>
                     <Swiper
+                        breakpoints={{
+                            // when window width is >= 640px
+                            319: {
+                            width: 319,
+                            slidesPerView: 1,
+                            },
+                            // when window width is >= 640px
+                            640: {
+                            width: 640,
+                            slidesPerView: 1,
+                            },
+                            // when window width is >= 768px
+                            768: {
+                            width: 768,
+                            slidesPerView: 2,
+                            },
+                        }}
                         spaceBetween={50}
-                        slidesPerView={2}
+                        slidesPerView={3}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
+                        
                         >
 
                             {

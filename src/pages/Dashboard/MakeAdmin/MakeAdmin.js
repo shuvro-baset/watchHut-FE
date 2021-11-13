@@ -60,7 +60,7 @@ const MakeAdmin = () => {
                         <br />
                         <button className="btn btn-order my-3" type="submit">submit</button>
                     </Form>
-                {success && <Alert severity="success">Made Admin successfully!</Alert>}
+                {success && <Alert variant="success">Admin made successfully!</Alert>}
             </div>
             </Row>
         </Container>
