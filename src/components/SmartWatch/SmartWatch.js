@@ -12,7 +12,7 @@ const SmartWatch = (props) => {
     
     return (
         <>
-            <Col md={4} className="my-3">
+            <Col md={4} className="my-3" data-aos="zoom-in-down">
                     <div className="shadow p-3 rounded">
                         <div className="first-div">
                             <img className='img-fluid rounded w-100' src={image} alt="" />
